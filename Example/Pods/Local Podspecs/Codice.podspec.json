@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Codice/Classes/**/*"
+  "source_files": "Codice/Classes/**/*",
+  "dependencies": {
+    "BrightFutures": [
+      "~> 4.1"
+    ]
+  }
 }
