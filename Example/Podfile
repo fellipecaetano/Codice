@@ -4,7 +4,7 @@ target 'Codice_Example' do
   pod 'Codice', :path => '../'
 
   target 'Codice_Tests' do
-    inherit! :search_paths
+    pod 'Codice', :path => '../'
     pod 'Nimble', '~> 4.1'
   end
 end

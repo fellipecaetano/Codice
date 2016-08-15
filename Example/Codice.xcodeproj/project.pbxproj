@@ -12,8 +12,10 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		969EDF4D7FE43E0E47E35A94 /* Pods_Codice_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F60D83734CE17F79D6F21C /* Pods_Codice_Tests.framework */; };
+		9913A82C8EDD9795F5154360 /* Pods_Codice_Example_Codice_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6735C8A03853FD1B139A3264 /* Pods_Codice_Example_Codice_Tests.framework */; };
+		B3B7B50A1D6260C100A2E4CD /* ArchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B7B5091D6260C100A2E4CD /* ArchivingTests.swift */; };
+		B3B7B50C1D62613600A2E4CD /* UnarchivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B7B50B1D62613600A2E4CD /* UnarchivingTests.swift */; };
 		D4CDAA4A5CCBA121FFCF4BDB /* Pods_Codice_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BA348EC4CBE6399C0B1E2B /* Pods_Codice_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +31,9 @@
 
 /* Begin PBXFileReference section */
 		00BA348EC4CBE6399C0B1E2B /* Pods_Codice_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Codice_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0245EEBDE4D2D766450D5E0A /* Pods-Codice_Example-Codice_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Example-Codice_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Example-Codice_Tests/Pods-Codice_Example-Codice_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		03C22CD767A5CEAE049C87B6 /* Pods-Codice_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Tests/Pods-Codice_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		289B64CCA1B55EA605EC7368 /* Pods-Codice_Example-Codice_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Example-Codice_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Example-Codice_Tests/Pods-Codice_Example-Codice_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE96A38F92CD3F06BAFEBBD /* Pods-Codice_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Tests/Pods-Codice_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Codice_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Codice_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,10 +44,12 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Codice_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Codice_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		6735C8A03853FD1B139A3264 /* Pods_Codice_Example_Codice_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Codice_Example_Codice_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B4C606D1AF25B888ADEC40 /* Codice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Codice.podspec; path = ../../Codice.podspec; sourceTree = "<group>"; };
 		80E1F13D82E719C961B3522B /* Pods-Codice_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Example/Pods-Codice_Example.release.xcconfig"; sourceTree = "<group>"; };
 		95A839D7C2064712EFCCC13A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		B3B7B5091D6260C100A2E4CD /* ArchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivingTests.swift; sourceTree = "<group>"; };
+		B3B7B50B1D62613600A2E4CD /* UnarchivingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnarchivingTests.swift; sourceTree = "<group>"; };
 		B4F60D83734CE17F79D6F21C /* Pods_Codice_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Codice_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC05939AA52D171684EA04E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		FE350168F8971768E96B2CD3 /* Pods-Codice_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codice_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codice_Example/Pods-Codice_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969EDF4D7FE43E0E47E35A94 /* Pods_Codice_Tests.framework in Frameworks */,
+				9913A82C8EDD9795F5154360 /* Pods_Codice_Example_Codice_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				B3B7B5091D6260C100A2E4CD /* ArchivingTests.swift */,
+				B3B7B50B1D62613600A2E4CD /* UnarchivingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			children = (
 				00BA348EC4CBE6399C0B1E2B /* Pods_Codice_Example.framework */,
 				B4F60D83734CE17F79D6F21C /* Pods_Codice_Tests.framework */,
+				6735C8A03853FD1B139A3264 /* Pods_Codice_Example_Codice_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,6 +163,8 @@
 				80E1F13D82E719C961B3522B /* Pods-Codice_Example.release.xcconfig */,
 				2FE96A38F92CD3F06BAFEBBD /* Pods-Codice_Tests.debug.xcconfig */,
 				03C22CD767A5CEAE049C87B6 /* Pods-Codice_Tests.release.xcconfig */,
+				289B64CCA1B55EA605EC7368 /* Pods-Codice_Example-Codice_Tests.debug.xcconfig */,
+				0245EEBDE4D2D766450D5E0A /* Pods-Codice_Example-Codice_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -209,7 +220,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -274,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codice_Tests/Pods-Codice_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codice_Example-Codice_Tests/Pods-Codice_Example-Codice_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		312213DB215D5D23151D6ADB /* [CP] Check Pods Manifest.lock */ = {
@@ -348,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codice_Tests/Pods-Codice_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codice_Example-Codice_Tests/Pods-Codice_Example-Codice_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EFEA95E5F72C63E6E682BFD5 /* [CP] Check Pods Manifest.lock */ = {
@@ -382,7 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				B3B7B50C1D62613600A2E4CD /* UnarchivingTests.swift in Sources */,
+				B3B7B50A1D6260C100A2E4CD /* ArchivingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +540,9 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FE96A38F92CD3F06BAFEBBD /* Pods-Codice_Tests.debug.xcconfig */;
+			baseConfigurationReference = 289B64CCA1B55EA605EC7368 /* Pods-Codice_Example-Codice_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -542,13 +555,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03C22CD767A5CEAE049C87B6 /* Pods-Codice_Tests.release.xcconfig */;
+			baseConfigurationReference = 0245EEBDE4D2D766450D5E0A /* Pods-Codice_Example-Codice_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
