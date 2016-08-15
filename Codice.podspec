@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name = 'Codice'
   s.version = '0.1.0'
-  s.summary = 'Codice is a very lightweight persistence interface.'
+  s.summary = 'Codice is a very lightweight, Foundation-compatible persistence interface.'
   s.description = <<-DESC
-Codice is a very lightweight persistence interface. In concrete terms, it implements a Swifty wrapper over Foundation's keyed archive API.
+Codice is a very lightweight, Foundation-compatible persistence interface. In concrete terms, it implements a Swifty wrapper over Foundation's keyed archive API.
                        DESC
   s.homepage = 'https://github.com/fellipecaetano/Codice'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
