@@ -1,0 +1,16 @@
+PODS:
+  - Codice (0.1.0)
+
+DEPENDENCIES:
+  - Codice (from `../`)
+
+EXTERNAL SOURCES:
+  Codice:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Codice: f5d99acd5f737334be5405773690abae486fa62a
+
+PODFILE CHECKSUM: f8967c584fd86ac11ea66823e3150dc191bbc9e2
+
+COCOAPODS: 1.0.0
