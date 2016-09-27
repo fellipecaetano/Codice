@@ -4,6 +4,10 @@ public struct KeyedArchive<T: protocol<NSDictionaryConvertible, URLConvertible>>
     public typealias Object = T
     public let queue: dispatch_queue_t
 
+    public init (queue: dispatch_queue_t) {
+        self.queue = queue
+    }
+
     public func archive(rootObject: T) -> Bool {
         return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
                                                  toFile: T.URL.absoluteString)
