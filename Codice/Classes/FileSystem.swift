@@ -17,3 +17,12 @@ public extension Cacheable where Self: URLConvertible {
                                                                inDomains: .UserDomainMask)[0]
     }
 }
+
+public protocol Persistable {}
+
+public extension Persistable where Self: URLConvertible {
+    static var baseURL: NSURL {
+        return NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,
+                                                               inDomains: .UserDomainMask)[0]
+    }
+}
