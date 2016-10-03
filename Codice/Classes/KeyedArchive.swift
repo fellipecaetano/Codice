@@ -9,12 +9,16 @@ public struct KeyedArchive<T: protocol<NSDictionaryConvertible, URLConvertible>>
     }
 
     public func archive(rootObject: T) -> Bool {
-        return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
-                                                 toFile: T.URL.absoluteString)
+        if let path = T.URL.path {
+            return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
+                                                     toFile: path)
+        } else {
+            return false
+        }
     }
 
     public func unarchive() throws -> T {
-        guard let unarchived = NSKeyedUnarchiver.unarchiveObjectWithFile(T.URL.absoluteString) else {
+        guard let unarchived = T.URL.path.flatMap(NSKeyedUnarchiver.unarchiveObjectWithFile) else {
             throw UnarchivingError.FailedReading
         }
         guard let dictionary = unarchived as? NSDictionary, object = T(dictionary: dictionary) else {
