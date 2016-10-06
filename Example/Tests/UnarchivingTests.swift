@@ -15,11 +15,11 @@ class UnarchivingTests: XCTestCase {
     }
 
     func testFailedUnarchiving() {
-        let unarchiving = FailableUnarchiving(queue: DispatchQueue.main, error: .WrongType)
+        let unarchiving = FailableUnarchiving(queue: DispatchQueue.main, error: .wrongType)
 
         waitUntil { done in
             unarchiving.unarchive().onFailure { error in
-                expect(error) == UnarchivingError.WrongType
+                expect(error) == UnarchivingError.wrongType
                 done()
             }
         }

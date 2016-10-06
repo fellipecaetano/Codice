@@ -1,6 +1,6 @@
 import Foundation
 
-public struct KeyedArchive<T: NSDictionaryConvertible & URLConvertible: Archiving, Unarchiving, Asynchronous {
+public struct KeyedArchive<T: NSDictionaryConvertible & URLConvertible>: Archiving, Unarchiving, Asynchronous {
     public typealias Object = T
     public let queue: DispatchQueue
 
@@ -9,16 +9,12 @@ public struct KeyedArchive<T: NSDictionaryConvertible & URLConvertible: Archivin
     }
 
     public func archive(_ rootObject: T) -> Bool {
-        if let path = T.URL.path {
-            return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
-                                                     toFile: path)
-        } else {
-            return false
-        }
+        return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
+                                                 toFile: T.URL.path)
     }
 
     public func unarchive() throws -> T {
-        guard let unarchived = T.URL.path.flatMap(NSKeyedUnarchiver.unarchiveObject(withFile:)) else {
+        guard let unarchived = NSKeyedUnarchiver.unarchiveObject(withFile: T.URL.path) else {
             throw UnarchivingError.failedReading
         }
         guard let dictionary = unarchived as? NSDictionary, let object = T(dictionary: dictionary) else {

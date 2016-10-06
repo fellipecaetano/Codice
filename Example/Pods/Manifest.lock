@@ -3,12 +3,12 @@ PODS:
     - Result (~> 3.0)
   - Codice (0.3.1):
     - BrightFutures (~> 5.0)
-  - Nimble (4.1.0)
+  - Nimble (5.0.0)
   - Result (3.0.0)
 
 DEPENDENCIES:
   - Codice (from `../`)
-  - Nimble (~> 4.1)
+  - Nimble (~> 5.0)
 
 EXTERNAL SOURCES:
   Codice:
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BrightFutures: 72fbc51227fa912ccdd5af04f2f6cea0b2d401a6
   Codice: 7c4672c46094037a18dbb60fddbd2abed6bf2465
-  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
 
-PODFILE CHECKSUM: dbcfe89c39b47b9468fba720616cdee4df9ee0f9
+PODFILE CHECKSUM: 6eb37c03d7fdc341d07ed17adf02391aee2bc1a5
 
 COCOAPODS: 1.1.0.rc.2

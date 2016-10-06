@@ -5,6 +5,6 @@ target 'Codice_Example' do
 
   target 'Codice_Tests' do
     pod 'Codice', :path => '../'
-    pod 'Nimble', '~> 4.1'
+    pod 'Nimble', '~> 5.0'
   end
 end

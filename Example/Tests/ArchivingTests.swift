@@ -1,4 +1,5 @@
 import XCTest
+import Foundation
 import Codice
 import Nimble
 
@@ -30,7 +31,7 @@ class ArchivingTests: XCTestCase {
 
         waitUntil { done in
             archiving.archive(TestFile(token: "")).onFailure { error in
-                expect(error) == ArchivingError.FailedWriting
+                expect(error) == ArchivingError.failedWriting
                 done()
             }
         }
@@ -69,7 +70,7 @@ private struct TestFile: URLConvertible {
     let token: String
 
     fileprivate static var baseURL: URL {
-        return URL(string: "file:///")!
+        return NSURL(string: "file:///")! as URL
     }
 
     fileprivate static var path: String {

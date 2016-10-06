@@ -16,7 +16,7 @@ public extension Archiving where Self: Asynchronous {
             } catch let error as ArchivingError {
                 promise.failure(error)
             } catch {
-                promise.failure(.Unknown)
+                promise.failure(.unknown)
             }
         }
 
