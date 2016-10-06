@@ -1,6 +1,6 @@
 {
   "name": "Codice",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "summary": "Codice is a very lightweight, Foundation-compatible persistence interface.",
   "description": "Codice is a very lightweight, Foundation-compatible persistence interface. In concrete terms, it implements a Swifty wrapper over Foundation's keyed archive API.",
   "homepage": "https://github.com/fellipecaetano/Codice",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/fellipecaetano/Codice.git",
-    "tag": "0.1.0"
+    "tag": "0.3.1"
   },
   "platforms": {
     "ios": "8.0",
@@ -22,7 +22,7 @@
   "source_files": "Codice/Classes/**/*",
   "dependencies": {
     "BrightFutures": [
-      "~> 4.1"
+      "~> 5.0"
     ]
   }
 }

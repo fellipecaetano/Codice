@@ -2,11 +2,11 @@ import BrightFutures
 
 public protocol Archiving {
     associatedtype Object
-    func archive(rootObject: Object) -> Bool
+    func archive(_ rootObject: Object) -> Bool
 }
 
 public extension Archiving where Self: Asynchronous {
-    func archive(rootObject: Object) -> Future<Object, ArchivingError> {
+    func archive(_ rootObject: Object) -> Future<Object, ArchivingError> {
         let promise = Promise<Object, ArchivingError>()
 
         dispatch {
@@ -25,14 +25,14 @@ public extension Archiving where Self: Asynchronous {
 }
 
 private extension Archiving {
-    func tryToArchive(rootObject: Object) throws {
+    func tryToArchive(_ rootObject: Object) throws {
         if !archive(rootObject) {
-            throw ArchivingError.FailedWriting
+            throw ArchivingError.failedWriting
         }
     }
 }
 
-public enum ArchivingError: ErrorType {
-    case FailedWriting
-    case Unknown
+public enum ArchivingError: Error {
+    case failedWriting
+    case unknown
 }

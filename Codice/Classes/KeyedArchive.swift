@@ -1,14 +1,14 @@
 import Foundation
 
-public struct KeyedArchive<T: protocol<NSDictionaryConvertible, URLConvertible>>: Archiving, Unarchiving, Asynchronous {
+public struct KeyedArchive<T: NSDictionaryConvertible & URLConvertible: Archiving, Unarchiving, Asynchronous {
     public typealias Object = T
-    public let queue: dispatch_queue_t
+    public let queue: DispatchQueue
 
-    public init (queue: dispatch_queue_t) {
+    public init (queue: DispatchQueue) {
         self.queue = queue
     }
 
-    public func archive(rootObject: T) -> Bool {
+    public func archive(_ rootObject: T) -> Bool {
         if let path = T.URL.path {
             return NSKeyedArchiver.archiveRootObject(rootObject.asDictionary(),
                                                      toFile: path)
@@ -18,11 +18,11 @@ public struct KeyedArchive<T: protocol<NSDictionaryConvertible, URLConvertible>>
     }
 
     public func unarchive() throws -> T {
-        guard let unarchived = T.URL.path.flatMap(NSKeyedUnarchiver.unarchiveObjectWithFile) else {
-            throw UnarchivingError.FailedReading
+        guard let unarchived = T.URL.path.flatMap(NSKeyedUnarchiver.unarchiveObject(withFile:)) else {
+            throw UnarchivingError.failedReading
         }
-        guard let dictionary = unarchived as? NSDictionary, object = T(dictionary: dictionary) else {
-            throw UnarchivingError.WrongType
+        guard let dictionary = unarchived as? NSDictionary, let object = T(dictionary: dictionary) else {
+            throw UnarchivingError.wrongType
         }
         return object
     }

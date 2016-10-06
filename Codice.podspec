@@ -12,5 +12,5 @@ Codice is a very lightweight, Foundation-compatible persistence interface. In co
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
   s.source_files = 'Codice/Classes/**/*'
-  s.dependency 'BrightFutures', '~> 4.1'
+  s.dependency 'BrightFutures', '~> 5.0'
 end

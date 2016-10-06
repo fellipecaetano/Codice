@@ -9,10 +9,10 @@ class ArchivingTests: XCTestCase {
 
     func testSuccessfulArchivingInAnotherQueue() {
         testSuccessfulArchiving(token: "background_queue",
-                                queue: dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0))
+                                queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.background))
     }
 
-    private func testSuccessfulArchiving(token token: String, queue: dispatch_queue_t = dispatch_get_main_queue()) {
+    fileprivate func testSuccessfulArchiving(token: String, queue: DispatchQueue = DispatchQueue.main) {
         let archiving = MockArchiving<TestFile>(queue: queue)
         let persistable = TestFile(token: token)
 
@@ -26,7 +26,7 @@ class ArchivingTests: XCTestCase {
     }
 
     func testErrorHandlingWhenArchivingFails() {
-        let archiving = FailableArchiving<TestFile>(queue: dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
+        let archiving = FailableArchiving<TestFile>(queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated))
 
         waitUntil { done in
             archiving.archive(TestFile(token: "")).onFailure { error in
@@ -45,22 +45,22 @@ class ArchivingTests: XCTestCase {
 
 private class MockArchiving<T: URLConvertible>: Archiving, Asynchronous {
     var archivedObjects: [String: T] = [:]
-    let queue: dispatch_queue_t
+    let queue: DispatchQueue
 
-    init (queue: dispatch_queue_t = dispatch_get_main_queue()) {
+    init (queue: DispatchQueue = DispatchQueue.main) {
         self.queue = queue
     }
 
-    func archive(rootObject: T) -> Bool {
+    func archive(_ rootObject: T) -> Bool {
         archivedObjects[T.URL.absoluteString] = rootObject
         return true
     }
 }
 
 private struct FailableArchiving<T>: Archiving, Asynchronous {
-    let queue: dispatch_queue_t
+    let queue: DispatchQueue
 
-    private func archive(rootObject: T) -> Bool {
+    fileprivate func archive(_ rootObject: T) -> Bool {
         return false
     }
 }
@@ -68,11 +68,11 @@ private struct FailableArchiving<T>: Archiving, Asynchronous {
 private struct TestFile: URLConvertible {
     let token: String
 
-    private static var baseURL: NSURL {
-        return NSURL(string: "file:///")!
+    fileprivate static var baseURL: URL {
+        return URL(string: "file:///")!
     }
 
-    private static var path: String {
+    fileprivate static var path: String {
         return "test"
     }
 }

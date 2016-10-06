@@ -24,8 +24,8 @@ public extension Unarchiving where Self: Asynchronous {
     }
 }
 
-public enum UnarchivingError: ErrorType {
-    case FailedReading
-    case WrongType
-    case Unknown
+public enum UnarchivingError: Error {
+    case failedReading
+    case wrongType
+    case unknown
 }

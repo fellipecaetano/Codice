@@ -4,7 +4,7 @@ import Nimble
 
 class UnarchivingTests: XCTestCase {
     func testSuccessfulAsyncUnarchiving() {
-        let unarchiving = SuccessfulUnarchiving(queue: dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0))
+        let unarchiving = SuccessfulUnarchiving(queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.background))
 
         waitUntil { done in
             unarchiving.unarchive().onSuccess { unarchived in
@@ -15,7 +15,7 @@ class UnarchivingTests: XCTestCase {
     }
 
     func testFailedUnarchiving() {
-        let unarchiving = FailableUnarchiving(queue: dispatch_get_main_queue(), error: .WrongType)
+        let unarchiving = FailableUnarchiving(queue: DispatchQueue.main, error: .WrongType)
 
         waitUntil { done in
             unarchiving.unarchive().onFailure { error in
@@ -28,7 +28,7 @@ class UnarchivingTests: XCTestCase {
 
 struct SuccessfulUnarchiving: Unarchiving, Asynchronous {
     typealias Object = Bool
-    let queue: dispatch_queue_t
+    let queue: DispatchQueue
 
     func unarchive() throws -> Bool {
         return true
@@ -37,7 +37,7 @@ struct SuccessfulUnarchiving: Unarchiving, Asynchronous {
 
 struct FailableUnarchiving: Unarchiving, Asynchronous {
     typealias Object = Bool
-    let queue: dispatch_queue_t
+    let queue: DispatchQueue
     let error: UnarchivingError
 
     func unarchive() throws -> Bool {

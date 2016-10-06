@@ -1,9 +1,9 @@
 public protocol Asynchronous {
-    var queue: dispatch_queue_t { get }
+    var queue: DispatchQueue { get }
 }
 
 public extension Asynchronous {
-    func dispatch(block: Void -> Void) {
-        dispatch_async(queue, block)
+    func dispatch(_ block: @escaping (Void) -> Void) {
+        queue.async(execute: block)
     }
 }
