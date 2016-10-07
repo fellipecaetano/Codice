@@ -2,10 +2,11 @@ import BrightFutures
 
 public protocol Archiving {
     associatedtype Object
-    func archive(_ rootObject: Object) -> Bool
+    @discardableResult func archive(_ rootObject: Object) -> Bool
 }
 
 public extension Archiving where Self: Asynchronous {
+    @discardableResult
     func archive(_ rootObject: Object) -> Future<Object, ArchivingError> {
         let promise = Promise<Object, ArchivingError>()
 
