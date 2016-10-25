@@ -1,4 +1,4 @@
-import BrightFutures
+import PromiseKit
 
 public protocol Unarchiving {
     associatedtype Object
@@ -6,21 +6,17 @@ public protocol Unarchiving {
 }
 
 public extension Unarchiving where Self: Asynchronous {
-    func unarchive() -> Future<Object, UnarchivingError> {
-        let promise = Promise<Object, UnarchivingError>()
-
-        dispatch {
-            do {
-                let object = try self.unarchive()
-                promise.success(object)
-            } catch let error as UnarchivingError {
-                promise.failure(error)
-            } catch {
-                promise.failure(.unknown)
+    func unarchive() -> Promise<Object> {
+        return Promise { fulfill, reject in
+            dispatch {
+                do {
+                    let object = try self.unarchive()
+                    fulfill(object)
+                } catch let error {
+                    reject(error)
+                }
             }
         }
-
-        return promise.future
     }
 }
 

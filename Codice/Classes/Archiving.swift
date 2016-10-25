@@ -1,4 +1,4 @@
-import BrightFutures
+import PromiseKit
 
 public protocol Archiving {
     associatedtype Object
@@ -7,21 +7,17 @@ public protocol Archiving {
 
 public extension Archiving where Self: Asynchronous {
     @discardableResult
-    func archive(_ rootObject: Object) -> Future<Object, ArchivingError> {
-        let promise = Promise<Object, ArchivingError>()
-
-        dispatch {
-            do {
-                try self.tryToArchive(rootObject)
-                promise.success(rootObject)
-            } catch let error as ArchivingError {
-                promise.failure(error)
-            } catch {
-                promise.failure(.unknown)
+    func archive(_ rootObject: Object) -> Promise<Object> {
+        return Promise { fulfill, reject in
+            dispatch {
+                do {
+                    try self.tryToArchive(rootObject)
+                    fulfill(rootObject)
+                } catch let error {
+                    reject(error)
+                }
             }
         }
-
-        return promise.future
     }
 }
 

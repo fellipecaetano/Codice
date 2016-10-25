@@ -1,10 +1,18 @@
 PODS:
-  - BrightFutures (5.0.1):
-    - Result (~> 3.0)
-  - Codice (0.3.1):
-    - BrightFutures (~> 5.0)
-  - Nimble (5.0.0)
-  - Result (3.0.0)
+  - Codice (1.1.0):
+    - PromiseKit (~> 4.0)
+  - Nimble (5.1.0)
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.4):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Codice (from `../`)
@@ -15,10 +23,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BrightFutures: 72fbc51227fa912ccdd5af04f2f6cea0b2d401a6
-  Codice: 7c4672c46094037a18dbb60fddbd2abed6bf2465
-  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  Codice: 81d9bfdbe882d02eced69e0e56087bacde7d7d58
+  Nimble: 5ea121a2eda60440287054cde077fc0ad22227b3
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
 
 PODFILE CHECKSUM: 6eb37c03d7fdc341d07ed17adf02391aee2bc1a5
 

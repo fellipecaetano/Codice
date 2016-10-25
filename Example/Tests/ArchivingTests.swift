@@ -18,7 +18,7 @@ class ArchivingTests: XCTestCase {
         let persistable = TestFile(token: token)
 
         waitUntil { done in
-            archiving.archive(persistable).onSuccess { _ in
+            _ = archiving.archive(persistable).then { _ -> Void in
                 let archived = archiving.archivedObjects[TestFile.URL.absoluteString]
                 expect(archived?.token) == persistable.token
                 done()
@@ -30,8 +30,9 @@ class ArchivingTests: XCTestCase {
         let archiving = FailableArchiving<TestFile>(queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated))
 
         waitUntil { done in
-            archiving.archive(TestFile(token: "")).onFailure { error in
-                expect(error) == ArchivingError.failedWriting
+            archiving.archive(TestFile(token: "")).catch { error in
+                let actual = error as? ArchivingError
+                expect(actual) == ArchivingError.failedWriting
                 done()
             }
         }

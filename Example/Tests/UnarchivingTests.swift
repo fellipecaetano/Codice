@@ -1,4 +1,5 @@
 import XCTest
+import PromiseKit
 import Codice
 import Nimble
 
@@ -7,7 +8,7 @@ class UnarchivingTests: XCTestCase {
         let unarchiving = SuccessfulUnarchiving(queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.background))
 
         waitUntil { done in
-            unarchiving.unarchive().onSuccess { unarchived in
+            _ = unarchiving.unarchive().then { unarchived -> Void in
                 expect(unarchived) == true
                 done()
             }
@@ -18,8 +19,9 @@ class UnarchivingTests: XCTestCase {
         let unarchiving = FailableUnarchiving(queue: DispatchQueue.main, error: .wrongType)
 
         waitUntil { done in
-            unarchiving.unarchive().onFailure { error in
-                expect(error) == UnarchivingError.wrongType
+            unarchiving.unarchive().catch { error in
+                let actual = error as? UnarchivingError
+                expect(actual) == UnarchivingError.wrongType
                 done()
             }
         }
