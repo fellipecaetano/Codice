@@ -1,6 +1,0 @@
-framework module Pods_Codice_Example_Codice_Tests {
-  umbrella header "Pods-Codice_Example-Codice_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
