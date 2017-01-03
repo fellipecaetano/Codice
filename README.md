@@ -13,7 +13,7 @@
 
 ## Installation
 
-Codice is available through [CocoaPods](http://cocoapods.org), a dependency manager for Cocoa projects or [Carthage](https://github.com/Carthage/Carthage), a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+Codice is available through [CocoaPods](http://cocoapods.org), a dependency manager for Cocoa projects, or [Carthage](https://github.com/Carthage/Carthage), a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
 ### CocoaPods
 
