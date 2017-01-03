@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B35210141E1AF5DA005EA2EF /* Codice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B352100A1E1AF5DA005EA2EF /* Codice.framework */; };
-		B35210191E1AF5DA005EA2EF /* CodiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35210181E1AF5DA005EA2EF /* CodiceTests.swift */; };
 		B352101B1E1AF5DA005EA2EF /* Codice.h in Headers */ = {isa = PBXBuildFile; fileRef = B352100D1E1AF5DA005EA2EF /* Codice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B35210291E1C05A4005EA2EF /* Codice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35210281E1C05A4005EA2EF /* Codice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +27,8 @@
 		B352100D1E1AF5DA005EA2EF /* Codice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codice.h; sourceTree = "<group>"; };
 		B352100E1E1AF5DA005EA2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35210131E1AF5DA005EA2EF /* CodiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B35210181E1AF5DA005EA2EF /* CodiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodiceTests.swift; sourceTree = "<group>"; };
 		B352101A1E1AF5DA005EA2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B35210281E1C05A4005EA2EF /* Codice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +53,9 @@
 		B35210001E1AF5DA005EA2EF = {
 			isa = PBXGroup;
 			children = (
-				B352100C1E1AF5DA005EA2EF /* Codice */,
-				B35210171E1AF5DA005EA2EF /* CodiceTests */,
 				B352100B1E1AF5DA005EA2EF /* Products */,
+				B352100C1E1AF5DA005EA2EF /* Sources */,
+				B35210171E1AF5DA005EA2EF /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,22 +68,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B352100C1E1AF5DA005EA2EF /* Codice */ = {
+		B352100C1E1AF5DA005EA2EF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				B352100D1E1AF5DA005EA2EF /* Codice.h */,
 				B352100E1E1AF5DA005EA2EF /* Info.plist */,
+				B35210281E1C05A4005EA2EF /* Codice.swift */,
 			);
-			path = Codice;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		B35210171E1AF5DA005EA2EF /* CodiceTests */ = {
+		B35210171E1AF5DA005EA2EF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B35210181E1AF5DA005EA2EF /* CodiceTests.swift */,
 				B352101A1E1AF5DA005EA2EF /* Info.plist */,
 			);
-			path = CodiceTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +149,7 @@
 					B35210091E1AF5DA005EA2EF = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8Q86GGRUX8;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					B35210121E1AF5DA005EA2EF = {
@@ -198,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35210291E1C05A4005EA2EF /* Codice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B35210191E1AF5DA005EA2EF /* CodiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +320,7 @@
 		B352101F1E1AF5DA005EA2EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -327,12 +329,13 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Codice/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.fellipecaetano.Codice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +343,7 @@
 		B35210201E1AF5DA005EA2EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -348,7 +352,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Codice/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.fellipecaetano.Codice;
@@ -361,9 +365,10 @@
 		B35210221E1AF5DA005EA2EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = CodiceTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.fellipecaetano.CodiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,9 +379,10 @@
 		B35210231E1AF5DA005EA2EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = CodiceTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.fellipecaetano.CodiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +409,7 @@
 				B35210201E1AF5DA005EA2EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B35210211E1AF5DA005EA2EF /* Build configuration list for PBXNativeTarget "CodiceTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +418,7 @@
 				B35210231E1AF5DA005EA2EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
