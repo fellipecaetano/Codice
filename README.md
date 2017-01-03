@@ -5,25 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/Codice.svg?style=flat)](http://cocoapods.org/pods/Codice)
 [![Platform](https://img.shields.io/cocoapods/p/Codice.svg?style=flat)](http://cocoapods.org/pods/Codice)
 
-## Testing
-
-Inside the `Example` directory you will find a project holding the tests for Codice. To run them:
-
-1. Clone the repository
-2. Enter the `Example` directory
-3. Open the `Codice.xcworkspace` file in Xcode 7.3
-4. Select the `Codice-Example` target in the target selection dropdown near the `Stop` button
-5. Press `⌘U` or click `Test` from the `Product` menu
-
 ## Requirements
 
-- iOS 8.0+
+- iOS 9.0+
 - macOS 10.10+
-- Xcode 7.3+
+- Xcode 8.2+
 
 ## Installation
 
-Codice is available through [CocoaPods](http://cocoapods.org), a dependency manager for Cocoa projects. CocoaPods can be downloaded as a stand-alone app and can also be installed through [RubyGems](https://rubygems.org/):
+Codice is available through [CocoaPods](http://cocoapods.org), a dependency manager for Cocoa projects or [Carthage](https://github.com/Carthage/Carthage), a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+### CocoaPods
+
+CocoaPods can be downloaded as a stand-alone app and can also be installed through [RubyGems](https://rubygems.org/):
 
 ```bash
 $ gem install cocoapods
@@ -42,6 +36,23 @@ Then, install your dependencies through the CocoaPods app or by running the foll
 ```bash
 $ pod install
 ```
+
+### Carthage
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following commands:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Codice into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "fellipecaetano/Codice"
+```
+
+Run `carthage update` to build the framework and drag the built `Codice.framework` into your Xcode project.
 
 ## Author
 
