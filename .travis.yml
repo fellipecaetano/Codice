@@ -1,5 +1,5 @@
 osx_image: xcode8.2
 language: objective-c
 script:
-  - set -o pipefail && xcodebuild test -workspace Example/Codice.xcworkspace -scheme Codice-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+  - set -o pipefail && xcodebuild -scheme Codice test ONLY_ACTIVE_ARCH=NO
   - bundle exec pod lib lint
