@@ -47,3 +47,15 @@ public class KeyedArchive<T: Encodable & URLConvertible> where T.Encoded: Decoda
         return unarchived?.decoded
     }
 }
+
+public extension Sequence where Iterator.Element : Decodable {
+    var decoded: [Self.Iterator.Element.Value] {
+        return self.map { $0.decoded }
+    }
+}
+
+public extension Sequence where Iterator.Element : Encodable {
+    var encoded: [Self.Iterator.Element.Encoded] {
+        return self.map { $0.encoded }
+    }
+}
